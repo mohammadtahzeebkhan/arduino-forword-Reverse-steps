@@ -4,7 +4,7 @@ const int dirPin=3;
 
 const  int enPin=8;
 
-float numstep=200 , i=0;
+float numstep=200 , i=0,fd;
 int x=0;
 
 int finalStep=0 ,fs=0,rs=0;
@@ -46,19 +46,32 @@ void loop(){
           fs=fs+1;
          // Serial.println("FORWORD---->");
           //Serial.print(fs);
-         //delay(1000);
+         
           }
            if(x==0){
           rs=rs+1;
          // Serial.println("REVERSE------>");
          // Serial.print(rs);
-          //delay(1000);
+        
           
           }
          finalStep=fs-rs;
-        //Serial.println("finalStep------>");
-        //Serial.print(finalStep);
+         //Serial.println("");
+        Serial.print("finalStep------>");
+        Serial.print(finalStep);
+         Serial.println("");
 
+
+           // Serial.println("");
+        Serial.print("finalDegree------>");
+        fd=.9*finalStep;
+        
+        Serial.print(fd);
+        
+         Serial.println("");
+         
+         delay(200);
+       
         digitalWrite(stepPin,HIGH);
         delayMicroseconds(400);
 
